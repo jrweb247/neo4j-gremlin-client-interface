@@ -1,0 +1,13 @@
+{
+  "name": "Neo4j Gremlin Client",
+  "version": "0.1.0",
+  "description": "Neo4j Gremlin Client - a Gremlin aware interface for Neo4j Gremlin plugin",
+  "author": "julien Rousseau",
+  "dependencies": {
+    "express": "^4.1.2",
+    "body-parser": "^1.1.2",
+    "errorhandler": "^1.0.1",
+    "method-override": "^1.0.0"
+  }
+}
+
