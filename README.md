@@ -5,8 +5,8 @@ a Gremlin aware interface for  [Neo4j Gremlin Plugin](https://github.com/thinkau
 
 ##Installation
 
-    $ git clone https://github.com/jrweb247/neo4j-gremlin-client.git
-    $ cd neo4j-gremlin-client
+    $ git clone https://github.com/jrweb247/neo4j-gremlin-client-interface.git
+    $ cd neo4j-gremlin-client-interface
     $ npm install
     $ node server
    Open [http://localhost:7475](http://localhost:7475)
