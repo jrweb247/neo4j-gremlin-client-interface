@@ -1,4 +1,4 @@
-![Neo4j Gremlin Client]()
+![Neo4j Gremlin Client](https://raw.githubusercontent.com/jrweb247/neo4j-gremlin-client-interface/master/public/img/neo4j-gremlin-client.png)
 
 #Neo4j Gremlin Client
 
