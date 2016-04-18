@@ -1,5 +1,5 @@
 {
-  "name": "Neo4j Gremlin Client",
+  "name": "Neo4jGremlinClient",
   "version": "0.1.0",
   "description": "Neo4j Gremlin Client - a Gremlin aware interface for Neo4j Gremlin plugin",
   "author": "julien Rousseau",
