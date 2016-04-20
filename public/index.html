@@ -13,17 +13,18 @@
     <div class="navbar-inner">
         <span class="brand" id="server_label">Server</span>
 
-        <form class="navbar-form pull-left">
+        <form class="navbar-form form-inline pull-left">
             <input id="server" type="text" class="span2" value="localhost:7474"/>
             <input id="username" type="text" class="span2" value="username"/>
             <input id="password" type="password" class="span2" value="password"/>
+
         </form>
         <button class="pull-left btn btn-link">
             <span id="notification" style="visibility: hidden" class="label label-info"></span>
         </button>
         <button id="history_btn" class="btn pull-right-btn" data-toggle="modal" data-target="#history_popup">History
         </button>
-
+        <span id="time" class="pull-right-btn" style="height: 20px;padding: 4px 6px;line-height: 45px"></span>
     </div>
 </div>
 <div id="main" class="container-fluid">
@@ -77,6 +78,7 @@
 <textarea class="out_of_screen" id="clipboardStaging"> </textarea>
 
 </body>
+<script src="js/gremlin.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
 <script src="lib/jqueryui/jquery-ui-1.9.2.custom.min.js" type="text/javascript"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>

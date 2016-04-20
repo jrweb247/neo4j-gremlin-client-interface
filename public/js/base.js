@@ -14,13 +14,41 @@ function constructUrl(server, url) {
 
 function call(server, url, method, data, username, password, successCallback, completeCallback) {
 
+    //var client = gremlin.createClient();
+    //
+    //client.on('open', function() {
+    //    console.log("Connection to Gremlin Server established!");
+    //});
+    //
+    //var query = client.stream(data);
+    //var results = [];
+    //var i = 0;
+    //
+    //query.on('data', function(d) {
+    //    results[i++] = JSON.stringify(d, null, 3);
+    //});
+    //
+    //query.on('end', function(d) {
+    //    var value = '[]';
+    //    if (results.length > 1) {
+    //        value = '['+results.join(',')+']'
+    //    } else if (results.length === 1) {
+    //        value = results[0];
+    //    }
+    //    completeCallback(value);
+    //});
+    //
+    //query.on('error', function(e) {
+    //    completeCallback(e.message);
+    //});
+
+
     url = constructUrl(server, url);
     var uname_password_re = /^(https?:\/\/)?(?:(?:(.*):)?(.*?)@)?(.*)$/;
     var url_parts = url.match(uname_password_re);
 
     url = url_parts[1] + url_parts[4];
     url += 'tp/gremlin/execute?script='+encodeURIComponent(data);
-
     $.ajax({
         url: url,
         headers: {
@@ -50,6 +78,14 @@ function submitCurrentRequest() {
 
     var username = $('#username').val();
     var password = $('#password').val();
+    var time = new Date().getTime();
+
+    //call(server, url, method, data, username, password, null, function (results) {
+    //    $("#notification").text("").css("visibility", "hidden");
+    //    $('#time').html((new Date().getTime() - time)+ 'ms');
+    //    gremlin.output.getSession().setValue(results);
+    //});
+
 
     call(server, url, method, data, username, password, null, function (xhr, status) {
             $("#notification").text("").css("visibility", "hidden");
@@ -57,6 +93,7 @@ function submitCurrentRequest() {
                 ((xhr.status >= 400 && xhr.status < 600) ||
                     (xhr.status >= 200 && xhr.status < 300)
                 )) {
+                $('#time').html((new Date().getTime() - time)+ 'ms');
                 // we have someone on the other side. Add to history
                 gremlin.history.addToHistory(server, url, method, data);
 
